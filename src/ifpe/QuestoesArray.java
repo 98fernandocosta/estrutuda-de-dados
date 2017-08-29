@@ -173,7 +173,22 @@ public class QuestoesArray {
 	    novo[i] = count;
 	}
 	return novo;
+    }
 
+    //Função que receber dois arrays e retorna um terceiro concatenando o 1º com o segundo invertido
+    //Obs.: um único laço
+    public static int[] questao10(int[] a, int[] b) {
+	int[] c = new int[a.length + b.length];
+	int tA = a.length, tB = b.length;
+	for (int i = 0; i < c.length; i++) {
+	    if (i < a.length) {
+		c[i] = a[i];
+	    }
+	    if (i < b.length) {
+		c[tA++] = b[--tB];
+	    }
+	}
+	return c;
     }
 
     public static void main(String[] args) {
